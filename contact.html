@@ -29,29 +29,28 @@
                 Whether you're renting a car for business, travel, or a special occasion, our team is ready to assist you.
                 Contact us for booking help, pricing inquiries, fleet details, or any support you need.
             </p>
+            <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
             
-            <form class="contact-form" action="https://formsubmit.co/johnkamee202@icloud.com" method="POST" autocomplete="on">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name" autocomplete="name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address" autocomplete="email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">How Can We Assist You?</label>
-                    <textarea id="message" name="message" required placeholder="Tell us about your car rental needs, preferred vehicle, dates, or any questions you have..." rows="5"></textarea>
-                </div>
-                
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </div>
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="New message from DriveNow Contact Form">
+                <input type="hidden" name="_subject" value="New DriveNow Contact Message">
+            
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+            
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" required></textarea>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </section>
     </main>
@@ -63,3 +62,4 @@
     </footer>
 </body>
 </html>
+
