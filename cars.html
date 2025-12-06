@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveNow Rentals - About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">DriveNow</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container">
+        <h1 class="section-title">Our Car Fleet</h1>
+        <p class="text-center mb-2">Browse our updated selection of reliable and premium rental cars.</p>
+
+        <!-- FILTERS + SEARCH -->
+        <div class="filters-box">
+            <input type="text" id="searchInput" placeholder="Search car name..." class="search-bar">
+
+            <div class="filter-buttons">
+                <button onclick="filterCars('all')" class="btn btn-primary">All</button>
+                <button onclick="filterCars('economy')" class="btn btn-primary">Economy</button>
+                <button onclick="filterCars('suv')" class="btn btn-primary">SUV</button>
+                <button onclick="filterCars('luxury')" class="btn btn-primary">Luxury</button>
+            </div>
+        </div>
+
+        <div class="courses-grid" id="carList">
+
+            <!-- Economy -->
+            <div class="course-card fade-in car-card" data-category="economy">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\mc24-yar-prem-01-pr-scaled.jpg" class="car-img">
+                <h3>🚗 Toyota Yaris</h3>
+                <p>Compact, fuel-efficient, perfect for city travel.<br><strong>$30/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <div class="course-card fade-in car-card" data-category="economy">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\OIP.webp" class="car-img">
+                <h3>🚗 Hyundai Accent</h3>
+                <p>Reliable, comfortable, excellent mileage.<br><strong>$35/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <!-- SUV -->
+            <div class="course-card fade-in car-card" data-category="suv">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\Sportage-GTLineS-1920x10801.avif" class="car-img">
+                <h3>🚙 Kia Sportage</h3>
+                <p>Spacious SUV ideal for family trips.<br><strong>$55/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <div class="course-card fade-in car-card" data-category="suv">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\OIP.jpg" class="car-img">
+                <h3>🚙 Hyundai Tucson</h3>
+                <p>Comfortable, modern, powerful driving.<br><strong>$60/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <!-- Luxury -->
+            <div class="course-card fade-in car-card" data-category="luxury">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\New BMW M5 G90 final-2.webp" class="car-img">
+                <h3>🔥 BMW 5 Series</h3>
+                <p>Luxury sedan with premium comfort.<br><strong>$120/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <div class="course-card fade-in car-card" data-category="luxury">
+                <img src="J:\DCIM\CS\Semister 1\Multimedia DR. Alla\Multimedia Project\Web\Cars\1-Mercedes-S-Class-plug-in.jpg" class="car-img">
+                <h3>🔥 Mercedes S-Class</h3>
+                <p>Elegant design and advanced features.<br><strong>$110/day</strong></p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- SIMPLE FILTER SCRIPT -->
+<script>
+function filterCars(category) {
+    let cars = document.querySelectorAll(".car-card");
+    cars.forEach(car => {
+        if (category === "all" || car.dataset.category === category) {
+            car.style.display = "block";
+        } else {
+            car.style.display = "none";
+        }
+    });
+}
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    let value = this.value.toLowerCase();
+    let cars = document.querySelectorAll(".car-card");
+
+    cars.forEach(car => {
+        let name = car.querySelector("h3").innerText.toLowerCase();
+        car.style.display = name.includes(value) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
